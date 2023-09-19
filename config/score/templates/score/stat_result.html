@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+{% load score_filter %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img style="display: block;margin:0px;max-height:100%;width=auto" class="image-thumbnail"src="{% static 'dragontail-12.1.1/img/champion/splash/' %}{{championName}}_0.jpg">
+<div>
+    승률
+    {% for i in ChampionStat%}
+    <div>
+        {{i.Tier}}
+        {{i.I.WinCount|Division:i.I.PickCount|floatformat:"3"}}
+        {{i.II.WinCount|Division:i.II.PickCount|floatformat:"3"}}
+        {{i.III.WinCount|Division:i.III.PickCount|floatformat:"3"}}
+        {{i.IV.WinCount|Division:i.IV.PickCount|floatformat:"3"}}
+    </div>
+    {% endfor %}
+    픽률
+    <div>
+        <div>
+        {{ChampionStat.IRON.Tier}}
+        {{ChampionStat.IRON.I.PickCount|Division:GameCount.IRON.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.IRON.II.PickCount|Division:GameCount.IRON.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.IRON.III.PickCount|Division:GameCount.IRON.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.IRON.IV.PickCount|Division:GameCount.IRON.IV.GameCount|floatformat:"3"}}
+    </div>
+    <div>
+        {{ChampionStat.BRONZE.Tier}}
+        {{ChampionStat.BRONZE.I.PickCount|Division:GameCount.BRONZE.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.BRONZE.II.PickCount|Division:GameCount.BRONZE.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.BRONZE.III.PickCount|Division:GameCount.BRONZE.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.BRONZE.IV.PickCount|Division:GameCount.BRONZE.IV.GameCount|floatformat:"3"}}
+    </div>
+    <div>
+        {{ChampionStat.SILVER.Tier}}
+        {{ChampionStat.SILVER.I.PickCount|Division:GameCount.SILVER.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.SILVER.II.PickCount|Division:GameCount.SILVER.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.SILVER.III.PickCount|Division:GameCount.SILVER.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.SILVER.IV.PickCount|Division:GameCount.SILVER.IV.GameCount|floatformat:"3"}}
+    </div>
+    <div>
+        {{ChampionStat.GOLD.Tier}}
+        {{ChampionStat.GOLD.I.PickCount|Division:GameCount.GOLD.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.GOLD.II.PickCount|Division:GameCount.GOLD.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.GOLD.III.PickCount|Division:GameCount.GOLD.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.GOLD.IV.PickCount|Division:GameCount.GOLD.IV.GameCount|floatformat:"3"}}
+    </div>
+    <div>
+        {{ChampionStat.PLATINUM.Tier}}
+        {{ChampionStat.PLATINUM.I.PickCount|Division:GameCount.PLATINUM.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.PLATINUM.II.PickCount|Division:GameCount.PLATINUM.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.PLATINUM.III.PickCount|Division:GameCount.PLATINUM.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.PLATINUM.IV.PickCount|Division:GameCount.PLATINUM.IV.GameCount|floatformat:"3"}}
+    </div>
+    <div>
+        {{ChampionStat.DIAMOND.Tier}}
+        {{ChampionStat.DIAMOND.I.PickCount|Division:GameCount.DIAMOND.I.GameCount|floatformat:"3"}}
+        {{ChampionStat.DIAMOND.II.PickCount|Division:GameCount.DIAMOND.II.GameCount|floatformat:"3"}}
+        {{ChampionStat.DIAMOND.III.PickCount|Division:GameCount.DIAMOND.III.GameCount|floatformat:"3"}}
+        {{ChampionStat.DIAMOND.IV.PickCount|Division:GameCount.DIAMOND.IV.GameCount|floatformat:"3"}}
+    </div>
+    </div>
+</div>
+</body>
+</html>

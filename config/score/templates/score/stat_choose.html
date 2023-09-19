@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load score_filter %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="row" align="middle" style="float:left;border:1px solid black">
+        {% for i in ChampionNameList %}
+        <div style="height:auto;width:150px;float:left;border:1px solid red">
+            <div style="max-height:100%">
+                <form method="get" action="{% url 'score:stat_result' %}">
+                    <button name="champion_name"  value={{i}} type="submit" style="border:none;background:none;display: block;margin:0px;max-height:50px;max-width=100%" class="image-thumbnail"><img style="max-height:50px;width:auto"src="{% static 'dragontail-12.1.1/12.1.1/img/champion/' %}{{i}}.png"></button>
+                </form>
+            </div>
+            <div>
+                {{ChampionFile.data|GetChampionName:i}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    <form action="{% url 'score:stat_result' %}">
+    이름 : <input type="text" name="st_name"><br>
+    학번 : <input type="text" name="st_id"><br>
+    학과 : <input type="text" name="department"><br>
+    <input type="image" style="width:100px;height:auto" src="{% static 'dragontail-12.1.1/12.1.1/img/champion/' %}Aatrox.png">
+</form>
+</body>
+</html>
